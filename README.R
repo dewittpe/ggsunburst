@@ -71,9 +71,9 @@ g_rec <-
   scale_fill_brewer(palette = 1) +
 
   theme(legend.position = "bottom") +
-  guides(fill = guide_legend(position = 3, nrow = 3),
-         fill_new = guide_legend(position = 2, nrow = 3),
-         fill_new_new = guide_legend(position = 1, nrow = 3))
+  guides(fill         = guide_legend(order = 3, nrow = 3),
+         fill_new     = guide_legend(order = 2, nrow = 3),
+         fill_new_new = guide_legend(order = 1, nrow = 3))
 
 # build the sunburst plot
 g_sb <-
@@ -225,15 +225,14 @@ g1 <-
   theme(legend.position = "bottom") +
   coord_polar(theta = "y") +
   theme_classic() +
-  theme(#legend.position = "bottom",
-        axis.title = element_blank(),
+  theme(axis.title = element_blank(),
         axis.text  = element_blank(),
         axis.ticks = element_blank(),
         axis.line  = element_blank()) +
-  guides(fill             = guide_legend(position = 4, ncol = 2),
-         fill_new         = guide_legend(position = 3, ncol = 2),
-         fill_new_new     = guide_legend(position = 2, ncol = 2),
-         fill_new_new_new = guide_legend(position = 1, ncol = 2))
+  guides(fill             = guide_legend(order = 4, ncol = 2),
+         fill_new         = guide_legend(order = 3, ncol = 2),
+         fill_new_new     = guide_legend(order = 2, ncol = 2),
+         fill_new_new_new = guide_legend(order = 1, ncol = 2))
 g1
 
 #'
