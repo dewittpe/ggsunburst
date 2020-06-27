@@ -2,7 +2,7 @@
 #'
 #' Inspired by the treatment pathway plots such as
 #'
-#' ![treatment pathway plot from pnas article](README_files/F2.large.jpg =100)
+#' ![treatment pathway plot from pnas article](README_files/F2.large.jpg =200x)
 #'
 #' found in
 #' [Hripcsak et. al. (2016)](https://doi.org/10.1073/pnas.1510502113) I set out
