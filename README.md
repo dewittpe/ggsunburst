@@ -1,8 +1,12 @@
 Sunburst Plots in ggplot2
 =========================
 
-Inspired by the treatment pathway plots such as ![treatment pathway plot
-from pnas article](README_files/F2.large.jpg) found in [Hripcsak et.
+Inspired by the treatment pathway plots such as
+
+![treatment pathway plot from pnas
+article](README_files/F2.large.jpg%20=100)
+
+found in [Hripcsak et.
 al. (2016)](https://doi.org/10.1073/pnas.1510502113) I set out to build
 similar plots, aka, sunburst plots, using
 [ggplot2](https://ggplot2.tidyverse.org).
@@ -88,7 +92,7 @@ three data.frames (I’ll be using data.tables) to summarize the data.
     # display the plots side by side
     grid.arrange(g_rec, g_sb, nrow = 1)
 
-![](README_files/figure-markdown_strict/unnamed-chunk-1-1.png)
+![](README_files/figure-markdown_strict/diamond_sunburst-1.png)
 
 Example 2: Radiographs vs MRI
 -----------------------------
@@ -231,7 +235,7 @@ Build similar summary data sets as was done in Example 1
              fill_new_new_new = guide_legend(position = 1, ncol = 2))
     g1
 
-![](README_files/figure-markdown_strict/unnamed-chunk-4-1.png)
+![](README_files/figure-markdown_strict/rad_sunburst_1-1.png)
 
 A different version of this graphic can be built with less white space
 between the rings. The above graphic has the advantage of each ring
@@ -243,7 +247,7 @@ vertebrae are not in the MRI FOV.
     sb_4[is.na(mri_fracture), `:=`(xmin = xmin - 1, xmax = xmax - 1)]
     g1
 
-![](README_files/figure-markdown_strict/unnamed-chunk-5-1.png)
+![](README_files/figure-markdown_strict/rad_sunburst_2-1.png)
 
 Session Info
 ============

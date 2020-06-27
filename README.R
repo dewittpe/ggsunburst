@@ -1,7 +1,10 @@
 #' # Sunburst Plots in ggplot2
 #'
 #' Inspired by the treatment pathway plots such as
-#' ![treatment pathway plot from pnas article](README_files/F2.large.jpg) found in
+#'
+#' ![treatment pathway plot from pnas article](README_files/F2.large.jpg =100)
+#'
+#' found in
 #' [Hripcsak et. al. (2016)](https://doi.org/10.1073/pnas.1510502113) I set out
 #' to build similar plots, aka, sunburst plots, using
 #' [ggplot2](https://ggplot2.tidyverse.org).
@@ -83,6 +86,7 @@ g_sb <-
         axis.ticks = element_blank(),
         axis.line  = element_blank())
 
+#+ label = "diamond_sunburst", fig.width = 16, fig.height = 9
 # display the plots side by side
 grid.arrange(g_rec, g_sb, nrow = 1)
 #'
@@ -202,6 +206,7 @@ sb_4[, `:=`(xmin = 3.5, xmax = 4.5, ymin = cumsum(shift(N, fill = 0)), ymax = cu
 sb_2 <- subset(sb_2, !is.na(mri_fracture))
 sb_3 <- subset(sb_3, !is.na(mri_type))
 
+#+ label = "rad_sunburst_1"
 g1 <-
   ggplot() +
   aes(xmin = xmin, xmax = xmax, ymin = ymin, ymax = ymax) +
@@ -237,6 +242,7 @@ g1
 #' one level of data.   In the below we move parts of the radiograph ring to
 #' lower levels when there is missing data below, e.g., when the vertebrae are
 #' not in the MRI FOV.
+#+ label = "rad_sunburst_2"
 sb_4[is.na(mri_type),     `:=`(xmin = xmin - 1, xmax = xmax - 1)]
 sb_4[is.na(mri_fracture), `:=`(xmin = xmin - 1, xmax = xmax - 1)]
 g1
